@@ -1,0 +1,75 @@
+$(document).ready(function (){
+	loadDoc("slider.json", openJson);
+	let sldr,txt;
+	let t;
+	let imgs = [];
+	let cardTxt = [];
+	let cardText = document.getElementById("card-text");
+	let imgTags ;
+	let inc=0;
+	createList();
+	function createList(){
+		for( i=1; i <=imgs.length; i++ ){
+			$("#tumbs").append('<div>'+i+'</div>');
+			
+		}
+		}
+		//console.log(imgs)
+		//console.log(imgTags)
+		
+		function loadDoc(url, cFunction) {
+			let xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+			if (this.readystate == 4 && this.status == 200) {
+				cFunction(this);
+				}
+			};
+			xhttp.open("GET", url, true);
+			xhttp.send();
+			}
+			
+			
+			function openJson(xml) {
+			 sldr = JSON.parse(xml.responseText).slider;// sldr arraydi
+			 //console.log(sldr)
+			 for( i=0; i< sldr.length; i++){
+				txt = sldr[i];
+				imgs[i] = txt.image;
+				cardTxt[i] = txt.text;
+				console.log(imgs)
+				console.log(cardTxt)
+			}
+			createList();
+			start();
+		}
+		
+		function show(){
+			if( inc >= imgs.length ) inc = 0;
+			if( inc < 0 ) inc = imgs.length-1;
+			$("#slider")
+				.css("background","url('img/"+ imgs[inc] +" ') center/cover no-repeat")
+				.fadeOut(0)
+				.fadeIn("slow");
+				content();
+				
+		}
+		function content() {
+		let kod = "";
+		kod += '<h1>' + cardTxt[0].h1 + '</h1>';
+		kod += '<p>' + cardTxt[0].p + '</p>';
+		console.log(cardTxt[0].h1);
+		cardText.innerHTML = kod;
+		console.log(cardText)
+		}
+		function start(){
+			stop();
+			show();
+			t = setInterval( ()=>{
+				inc ++;
+				show();
+			},3000)
+		}
+		
+	function stop() { clearInterval(t) }
+	
+	})

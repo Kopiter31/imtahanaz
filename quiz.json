@@ -1,0 +1,50 @@
+{"quiz":[
+	{
+		"image": "1.jpg",
+		"text": {
+			"h1": "Title 1",
+			"p": "Birinci slaydin metni burada yer alacaq. "
+		},
+		"url": "http://itstep.az"
+	},
+	{
+		"image": "2.jpg",
+		"text": {
+			"h1": "Title 2",
+			"p": "Ikinci slaydin metni burada yer alacaq. "
+		},
+		"url": "http://facebok.com"
+	},
+	{
+		"image": "3.jpg",
+		"text": {
+			"h1": "Title 3",
+			"p": "Ucuncu slaydin metni burada yer alacaq. "
+		},
+		"url": "https://youtube.com"
+	},
+	{
+		"image": "4.jpg",
+		"text": {
+			"h1": "Title 1",
+			"p": "Birinci slaydin metni burada yer alacaq. "
+		},
+		"url": "http://wikipedia.org"
+	},
+	{
+		"image": "5.jpg",
+		"text": {
+			"h1": "Title 4",
+			"p": "Dorduncu slaydin metni burada yer alacaq. "
+		},
+		"url": "http://president.az"
+	},
+	{
+		"image": "6.jpg",
+		"text": {
+			"h1": "Title 5",
+			"p": "Besinci slaydin metni burada yer alacaq. "
+		},
+		"url": "https://getbootstrap.com/"
+	}
+]}
